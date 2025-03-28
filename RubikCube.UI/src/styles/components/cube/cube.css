@@ -1,0 +1,113 @@
+.cubeButtons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: fit-content;
+    margin: 50px auto auto auto;
+}
+
+    .cubeButtons button, .resetState {
+        border: 2px solid #000;
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: whitesmoke;
+    }
+
+        .cubeButtons button:hover,
+        .resetState:hover {
+            background-color: lightgray;
+        }
+
+        .cubeButtons button:active,
+        .resetState:active {
+            background-color: darkgray;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+.resetState {
+    margin-top: 20px;
+}
+
+.row {
+    display: contents;
+}
+
+.sticker {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 3px;
+}
+
+.white {
+    background-color: white;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.cubeContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.side {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 2px;
+}
+
+.upSide {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.frontSide {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.leftSide {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.rightSide {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.backSide {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.downSide {
+    grid-column: 2;
+    grid-row: 3;
+}
