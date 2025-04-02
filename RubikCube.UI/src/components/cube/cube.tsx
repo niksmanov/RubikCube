@@ -40,7 +40,7 @@ export default function Cube() {
                     <button title="Left Counter Clockwise" onClick={() => rotateCube(types.CubeRotation.LeftCounterClockwise)}> L' </button>
                     <button title="Down Counter Clockwise" onClick={() => rotateCube(types.CubeRotation.DownCounterClockwise)}> D' </button>
                 </div>
-                <button className="resetState" onClick={() => populateInitialCubeData()}> Reset </button>
+                <button title="Restart the game" className="resetState" onClick={() => populateInitialCubeData()}> Reset </button>
             </div>
 
             <Error message={error} />

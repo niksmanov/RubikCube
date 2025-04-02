@@ -9,7 +9,8 @@ using MediatR;
 using Xunit;
 
 namespace RubikCube.Test.Queries;
-public class GetCubeQueryTests(WebApplicationFactory<CubeController> factory) : IClassFixture<WebApplicationFactory<CubeController>>
+public class GetCubeQueryTests(WebApplicationFactory<CubeController> factory) : 
+    IClassFixture<WebApplicationFactory<CubeController>>
 {
     [Fact]
     public async Task WhenProvidedValidQuery_ShouldCreateTheCube()

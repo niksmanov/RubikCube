@@ -7,7 +7,7 @@ Rubik Cube is a .NET 8 application with React for the UI. It creates a 3x3 Rubik
 1. Install [Node.js](https://nodejs.org/en/download) if you don't have it.
 2. Open **Visual Studio 2022**.
 3. Configure startup projects to be **RubikCube.API** and **RubikCube.UI**.
-4. Click the **Start** button (F5) for debugging or **Start Without Debugging** (Ctrl + F5).
+4. Start the application.
 
 ## More About the Application
 
@@ -16,4 +16,4 @@ Rubik Cube is a .NET 8 application with React for the UI. It creates a 3x3 Rubik
 - **API Documentation:** Swagger with response and request examples
 - **Architecture:** Domain-Driven Design (DDD)
 - **Patterns Used:** Mediator pattern
-- **Testing:** Integration tests
+- **Testing:** Integration tests, Unit tests

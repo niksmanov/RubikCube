@@ -1,7 +1,7 @@
 ﻿using Serilog;
 
 namespace RubikCube.Core.Handlers;
-public class BaseHandler
+public abstract class BaseHandler
 {
     private readonly ILogger _logger;
 

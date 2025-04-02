@@ -4,7 +4,7 @@ import Cube from './components/cube/cube';
 export default function App() {
     return (
         <div>
-            <h1>Rubik Cube Challenge</h1>
+            <h1>Rubik Cube</h1>
             <Cube />
         </div>
     );

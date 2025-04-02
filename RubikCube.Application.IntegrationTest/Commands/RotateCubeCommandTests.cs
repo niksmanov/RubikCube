@@ -3,15 +3,15 @@ using Microsoft.Extensions.DependencyInjection;
 using RubikCube.Api.Controllers;
 using RubikCube.Application.Commands.RotateCube;
 using RubikCube.Application.Queries.GetCube;
-using RubikCube.Application.Models;
 using RubikCube.Core.Exceptions;
 using RubikCube.Core.Enumerations;
+using FluentAssertions;
 using MediatR;
 using Xunit;
-using FluentAssertions;
 
 namespace RubikCube.Test.Commands;
-public class RotateCubeCommandTests(WebApplicationFactory<CubeController> factory) : IClassFixture<WebApplicationFactory<CubeController>>
+public class RotateCubeCommandTests(WebApplicationFactory<CubeController> factory) : 
+    IClassFixture<WebApplicationFactory<CubeController>>
 {
     [Fact]
     public async Task WhenProvidedInvalidRotation_ShouldThrowValidationException()
@@ -53,25 +53,7 @@ public class RotateCubeCommandTests(WebApplicationFactory<CubeController> factor
 
         //Assert
         rotatedCube.Should().NotBeNull();
-
-        var initialColors = ExtractAllFacelets(initialCube).Select(x => x.Color);
-        var rotatedColors = ExtractAllFacelets(rotatedCube).Select(x => x.Color);
-
-        Assert.NotEqual(initialColors, rotatedColors);
-    }
-
-    private static ICollection<CubeFaceletViewModel> ExtractAllFacelets(CubeViewModel cube)
-    {
-        var result = new List<CubeFaceletViewModel>();
-
-        result.AddRange(cube.FrontSide.Facelets);
-        result.AddRange(cube.BackSide.Facelets);
-        result.AddRange(cube.UpSide.Facelets);
-        result.AddRange(cube.DownSide.Facelets);
-        result.AddRange(cube.LeftSide.Facelets);
-        result.AddRange(cube.RightSide.Facelets);
-
-        return result;
+        rotatedCube.Should().NotBeEquivalentTo(initialCube);
     }
 
     public static IEnumerable<object[]> CubeRotations() =>
